@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bengoshi | VakilBabu</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="chat-panel">
+        <header class="chat-header">
+          <div>
+            <p class="eyebrow">VakilBabu</p>
+            <h1>Bengoshi</h1>
+          </div>
+        </header>
+
+        <div id="chatMessages" class="chat-messages" aria-live="polite"></div>
+
+        <form id="chatForm" class="chat-form">
+          <label class="sr-only" for="messageInput">Type your message</label>
+          <input
+            id="messageInput"
+            type="text"
+            placeholder="Ask about the app or workspace..."
+            autocomplete="off"
+          />
+          <button type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
