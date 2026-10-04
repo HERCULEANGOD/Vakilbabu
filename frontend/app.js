@@ -53,4 +53,4 @@ const sendMessage = async (event) => {
 
 chatForm.addEventListener('submit', sendMessage);
 
-addMessage('Hello. I am Bengoshi, the VakilBabu assistant.', 'assistant');
+addMessage('Hello. I am Babu, the VakilBabu assistant.', 'assistant');

@@ -1,4 +1,4 @@
-# Bengoshi by VakilBabu
+# Babu by VakilBabu
 
 A production-ready chatbot starter for VakilBabu, built with FastAPI and a vanilla HTML/CSS/JS frontend.
 

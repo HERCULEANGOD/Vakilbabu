@@ -15,7 +15,7 @@ from backend.routes.chat import router
 configure_logging()
 
 app = fastapi.FastAPI(
-    title="Bengoshi by VakilBabu",
+    title="Babu by VakilBabu",
     description="Production-ready chatbot backend for VakilBabu",
     version=settings.app_version,
     debug=settings.debug,

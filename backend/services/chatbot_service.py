@@ -25,7 +25,7 @@ class ChatbotService:
         normalized = re.sub(r"\s+", " ", message.strip().lower())
 
         if any(keyword in normalized for keyword in self.APP_TOPICS["hello"]):
-            return "Hello. I am Bengoshi, the VakilBabu assistant."
+            return "Hello. I am Babu, the VakilBabu assistant."
 
         if any(keyword in normalized for keyword in self.APP_TOPICS["cases"]):
             return "I can help with case-related questions in the app."

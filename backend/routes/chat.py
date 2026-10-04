@@ -11,7 +11,7 @@ router = APIRouter(prefix="/api", tags=["chat"])
 
 @router.get("/health", response_model=HealthResponse)
 async def health() -> HealthResponse:
-    return HealthResponse(status="ok", app_name="Bengoshi", version="0.1.0")
+    return HealthResponse(status="ok", app_name="Babu", version="0.1.0")
 
 
 @router.post("/chat", response_model=ChatResponse)

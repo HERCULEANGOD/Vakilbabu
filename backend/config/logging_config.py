@@ -21,7 +21,7 @@ def configure_logging() -> None:
                 }
             },
             "loggers": {
-                "bengoshi": {
+                "babu": {
                     "handlers": ["console"],
                     "level": "INFO",
                     "propagate": False,
@@ -31,4 +31,4 @@ def configure_logging() -> None:
     )
 
 
-logger = logging.getLogger("bengoshi")
+logger = logging.getLogger("babu")
