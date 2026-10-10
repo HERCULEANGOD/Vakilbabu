@@ -1,48 +1,30 @@
 from __future__ import annotations
 
 import re
-from typing import List
 
 from backend.config.logging_config import logger
+from backend.services.faq_retriever import faq_retriever
 
 
 class ChatbotService:
     """Placeholder chatbot engine that can later be replaced by an LLM or RAG service."""
-
-    APP_TOPICS = {
-        "hello": ["hello", "hi", "hey", "namaste", "greetings"],
-        "cases": ["case", "cases", "matter", "legal matter", "litigation"],
-        "documents": ["document", "documents", "file", "files", "upload", "pdf"],
-        "pricing": ["price", "pricing", "plan", "package", "subscription"],
-        "account": ["login", "signup", "signin", "account", "profile", "register"],
-        "support": ["support", "help", "assist", "contact", "team"],
-    }
 
     def generate_response(self, message: str) -> str:
         if not message or not message.strip():
             return "Sorry, please clarify."
 
         normalized = re.sub(r"\s+", " ", message.strip().lower())
+        greeting_tokens = {"hello", "hi", "hey", "namaste", "greetings"}
+        message_tokens = set(re.findall(r"[a-z]+", normalized))
 
-        if any(keyword in normalized for keyword in self.APP_TOPICS["hello"]):
+        if message_tokens and message_tokens <= greeting_tokens:
             return "Hello. I am Babu, the VakilBabu assistant."
 
-        if any(keyword in normalized for keyword in self.APP_TOPICS["cases"]):
-            return "I can help with case-related questions in the app."
+        answer = faq_retriever.retrieve(normalized)
+        if answer:
+            return answer
 
-        if any(keyword in normalized for keyword in self.APP_TOPICS["documents"]):
-            return "Please upload or review documents in the workspace."
-
-        if any(keyword in normalized for keyword in self.APP_TOPICS["pricing"]):
-            return "Please check the pricing section in the app."
-
-        if any(keyword in normalized for keyword in self.APP_TOPICS["account"]):
-            return "The account section manages profile and access details."
-
-        if any(keyword in normalized for keyword in self.APP_TOPICS["support"]):
-            return "Please contact the support team through the app support page."
-
-        logger.info("Received non-app-related query: %s", normalized)
+        logger.info("No FAQ match found for chat request")
         return "Sorry, please clarify."
 
 
