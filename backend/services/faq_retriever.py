@@ -19,6 +19,14 @@ SYNONYMS = {
     "add": "create",
     "make": "create",
 }
+CATEGORY_LABELS = {
+    "auth": "Account & Login",
+    "case": "Cases",
+    "client": "Clients",
+    "reminder": "Reminders",
+    "ai": "AI Assistant",
+    "profile": "Profile",
+}
 
 
 def _tokenize(text: str) -> set[str]:
@@ -56,6 +64,20 @@ class FAQRetriever:
             self.document_terms.append(terms)
             for term in terms:
                 self.document_frequency[term] = self.document_frequency.get(term, 0) + 1
+
+    def questions_by_category(self) -> list[dict[str, Any]]:
+        grouped: dict[str, list[str]] = {label: [] for label in CATEGORY_LABELS.values()}
+        for faq in self.faqs:
+            prefix = faq["id"].split("-", maxsplit=1)[0]
+            label = CATEGORY_LABELS.get(prefix)
+            if label:
+                grouped[label].append(faq["question"])
+
+        return [
+            {"category": category, "questions": questions}
+            for category, questions in grouped.items()
+            if questions
+        ]
 
     def retrieve(self, question: str) -> Optional[str]:
         query_terms = _tokenize(question)

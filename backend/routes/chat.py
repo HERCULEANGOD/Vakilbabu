@@ -5,8 +5,14 @@ from fastapi import APIRouter, HTTPException, status
 from backend.config.logging_config import logger
 from backend.models.chat import ChatRequest, ChatResponse, HealthResponse
 from backend.services.chatbot_service import chatbot_service
+from backend.services.faq_retriever import faq_retriever
 
 router = APIRouter(prefix="/api", tags=["chat"])
+
+
+@router.get("/faqs")
+async def list_faqs() -> list[dict[str, object]]:
+    return faq_retriever.questions_by_category()
 
 
 @router.get("/health", response_model=HealthResponse)

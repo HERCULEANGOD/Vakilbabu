@@ -1,6 +1,9 @@
 const chatMessages = document.getElementById('chatMessages');
 const chatForm = document.getElementById('chatForm');
 const messageInput = document.getElementById('messageInput');
+const guideToggle = document.getElementById('guideToggle');
+const questionGuide = document.getElementById('questionGuide');
+const faqTopics = document.getElementById('faqTopics');
 
 const addMessage = (text, sender) => {
   const row = document.createElement('div');
@@ -51,6 +54,60 @@ const sendMessage = async (event) => {
   }
 };
 
+const loadQuestionGuide = async () => {
+  try {
+    const response = await fetch('/api/faqs');
+    if (!response.ok) {
+      throw new Error('Unable to load questions.');
+    }
+
+    const categories = await response.json();
+    faqTopics.replaceChildren();
+
+    categories.forEach((category, index) => {
+      const section = document.createElement('details');
+      section.className = 'faq-category';
+      section.open = index === 0;
+
+      const heading = document.createElement('summary');
+      heading.textContent = category.category;
+      section.appendChild(heading);
+
+      const questions = document.createElement('div');
+      questions.className = 'faq-questions';
+      category.questions.forEach((question) => {
+        const button = document.createElement('button');
+        button.className = 'faq-question';
+        button.type = 'button';
+        button.textContent = question;
+        button.addEventListener('click', () => {
+          messageInput.value = question;
+          questionGuide.hidden = true;
+          guideToggle.setAttribute('aria-expanded', 'false');
+          chatForm.requestSubmit();
+        });
+        questions.appendChild(button);
+      });
+
+      section.appendChild(questions);
+      faqTopics.appendChild(section);
+    });
+
+    if (categories.length === 0) {
+      faqTopics.textContent = 'No questions are available yet.';
+    }
+  } catch (error) {
+    faqTopics.textContent = 'The question guide is unavailable right now.';
+  }
+};
+
+guideToggle.addEventListener('click', () => {
+  const isExpanded = guideToggle.getAttribute('aria-expanded') === 'true';
+  guideToggle.setAttribute('aria-expanded', String(!isExpanded));
+  questionGuide.hidden = isExpanded;
+});
+
+loadQuestionGuide();
 chatForm.addEventListener('submit', sendMessage);
 
 addMessage('Hello. I am Babu, the VakilBabu assistant.', 'assistant');

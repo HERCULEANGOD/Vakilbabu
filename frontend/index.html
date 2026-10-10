@@ -14,7 +14,23 @@
             <p class="eyebrow">VakilBabu</p>
             <h1>Babu</h1>
           </div>
+          <button
+            id="guideToggle"
+            class="guide-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="questionGuide"
+          >
+            What can I ask?
+          </button>
         </header>
+
+        <section id="questionGuide" class="question-guide" aria-label="Frequently asked questions" hidden>
+          <div class="guide-heading">
+            <h2>Explore questions</h2>
+          </div>
+          <div id="faqTopics" class="faq-topics" aria-live="polite"></div>
+        </section>
 
         <div id="chatMessages" class="chat-messages" aria-live="polite"></div>
 
