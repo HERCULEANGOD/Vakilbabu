@@ -1,0 +1,230 @@
+[
+  {
+    "id": "auth-register",
+    "question": "How do I register a new lawyer account?",
+    "keywords": ["sign up", "registration", "new account", "first name", "last name", "email", "phone", "password", "captcha", "OTP"],
+    "answer": "Open /register, enter your name, email, phone, and password, solve the captcha, then select Register. Check your email for the OTP to verify the account."
+  },
+  {
+    "id": "auth-verify-otp",
+    "question": "How do I verify my account with an OTP?",
+    "keywords": ["six digit code", "email verification", "verification code", "register", "verify account"],
+    "answer": "After registering, enter the 6-digit OTP sent to your email and select Verify. The account is verified, then you can continue to login or the dashboard."
+  },
+  {
+    "id": "auth-login",
+    "question": "How do I log in with valid credentials?",
+    "keywords": ["sign in", "login page", "email", "password", "captcha", "dashboard", "authentication"],
+    "answer": "Open /login, enter your email and password, solve the captcha, and select Login. Successful login takes you to the dashboard."
+  },
+  {
+    "id": "auth-wrong-password",
+    "question": "What happens if I enter the wrong password?",
+    "keywords": ["invalid credentials", "login error", "incorrect password", "failed login"],
+    "answer": "If the password is incorrect, login is rejected and the app displays “Invalid credentials.”"
+  },
+  {
+    "id": "auth-forgot-password",
+    "question": "How do I reset a forgotten password?",
+    "keywords": ["forgot password", "password reset", "OTP", "new password", "recover account"],
+    "answer": "Select Forgot Password on the login page, enter your registered email, verify with the emailed OTP, and set a new password. You can then log in with the new password."
+  },
+  {
+    "id": "auth-expired-otp",
+    "question": "What if my OTP has expired?",
+    "keywords": ["expired code", "ten minutes", "OTP expiry", "verification code"],
+    "answer": "An OTP submitted after it expires is rejected with “OTP has expired.” Request a fresh OTP and use it promptly."
+  },
+  {
+    "id": "auth-session-refresh",
+    "question": "Will my login session remain after refreshing the page?",
+    "keywords": ["session persists", "refresh", "F5", "stay logged in", "dashboard", "session"],
+    "answer": "After a successful login, refreshing the page should keep you on the dashboard rather than send you back to login."
+  },
+  {
+    "id": "auth-logout",
+    "question": "How do I log out?",
+    "keywords": ["logout", "sign out", "profile icon", "end session", "log off"],
+    "answer": "Select the profile icon, then choose Sign Out. You will be sent to /login and must log in again to access the dashboard."
+  },
+  {
+    "id": "case-create",
+    "question": "How do I create a new case?",
+    "keywords": ["new case", "case management", "title", "case type", "court name", "filing date", "save case"],
+    "answer": "Open Cases → New Case, enter the title, case type, court name, and filing date, then select Save. The case appears in the case list with its details."
+  },
+  {
+    "id": "case-view",
+    "question": "What can I see on a case detail page?",
+    "keywords": ["open case", "overview", "hearings", "court instances", "documents", "AI Assist", "case tabs"],
+    "answer": "Select a case in the list to open its detail page. The page provides Overview, Hearings, Court Instances, Documents, and AI Assist tabs."
+  },
+  {
+    "id": "case-edit",
+    "question": "How do I edit a case, such as changing its court name?",
+    "keywords": ["update case", "edit case details", "court name", "save changes"],
+    "answer": "Open the case detail page, select Edit, change the court name or other details, and save. The updated information should appear immediately."
+  },
+  {
+    "id": "case-filter",
+    "question": "How do I filter cases by type?",
+    "keywords": ["case list", "criminal", "filter", "case category", "case type"],
+    "answer": "Open the Cases list and select a case type, such as Criminal, in the type filter. The list will show matching cases only."
+  },
+  {
+    "id": "case-add-hearing",
+    "question": "How do I add a hearing to a case?",
+    "keywords": ["hearing date", "court", "purpose", "hearings tab", "new hearing", "schedule hearing"],
+    "answer": "Open the case’s Hearings tab, select Add Hearing, enter the date, court, and purpose, then save. The hearing appears in the list with those details."
+  },
+  {
+    "id": "case-court-instance",
+    "question": "How do I add a court instance?",
+    "keywords": ["court instances tab", "court details", "add instance", "save court instance"],
+    "answer": "Open the case’s Court Instances tab, select Add Court Instance, fill in the details, and save. The court instance is added to the case."
+  },
+  {
+    "id": "case-upload-document",
+    "question": "How do I upload a document to a case?",
+    "keywords": ["case documents", "PDF", "file upload", "under 50 MB", "file grid", "document name", "document size"],
+    "answer": "Open the case’s Documents tab, select Upload, choose a PDF under 50 MB, then submit it. The uploaded file appears in the grid with its name and size."
+  },
+  {
+    "id": "case-archive",
+    "question": "How do I archive a case?",
+    "keywords": ["archive case", "confirm archive", "active cases", "archived filter", "remove from active list"],
+    "answer": "Open the case detail page, select Archive, and confirm. It disappears from the active case list and can be found using the archived filter."
+  },
+  {
+    "id": "case-pagination",
+    "question": "How do I see the next page of cases?",
+    "keywords": ["pagination", "more than 20 cases", "next page", "page number", "case list pages"],
+    "answer": "When the case list has more than 20 cases, select Next page. The next results load and the page number updates."
+  },
+  {
+    "id": "client-create",
+    "question": "How do I add a new client?",
+    "keywords": ["new client", "clients", "first name", "phone", "email", "save client"],
+    "answer": "Open Clients → New Client, enter the client’s first name, phone, and email, then save. The new client appears in the client list."
+  },
+  {
+    "id": "client-view",
+    "question": "How do I view a client and their linked cases?",
+    "keywords": ["client details", "open client", "associated cases", "related cases", "linked matters"],
+    "answer": "Select a client in the client list. Their details and all cases linked to them are shown on the client detail page."
+  },
+  {
+    "id": "client-edit",
+    "question": "How do I edit a client's phone number?",
+    "keywords": ["update client", "edit client details", "change phone", "save client changes"],
+    "answer": "Open the client and select Edit, change the phone number, then save. The updated number appears in the client details."
+  },
+  {
+    "id": "client-search",
+    "question": "How do I search for a client by name?",
+    "keywords": ["find client", "clients list", "search box", "matching clients", "filter by name"],
+    "answer": "Enter the client’s name in the search box on the Clients list. Matching clients remain visible and non-matching entries are filtered out."
+  },
+  {
+    "id": "client-delete",
+    "question": "How do I delete a client?",
+    "keywords": ["remove client", "client detail", "confirm delete", "delete client record"],
+    "answer": "Open the client, select Delete, and confirm. The client is removed from the list."
+  },
+  {
+    "id": "reminder-create",
+    "question": "How do I create a reminder?",
+    "keywords": ["new reminder", "due date", "due time", "reminder type", "save reminder"],
+    "answer": "Open Reminders → New Reminder, enter a title, due date and time, and type, then save. The reminder appears in the list with its scheduled time."
+  },
+  {
+    "id": "reminder-complete",
+    "question": "How do I mark a reminder complete?",
+    "keywords": ["finish reminder", "completed status", "mark complete", "checkbox", "reminder done"],
+    "answer": "Find the reminder and select Mark Complete or its checkbox. Its status changes to completed."
+  },
+  {
+    "id": "reminder-edit",
+    "question": "How do I change a reminder's due date?",
+    "keywords": ["edit reminder", "update reminder", "new due date", "save reminder changes"],
+    "answer": "Select Edit on the reminder, change its due date, and save. The new due date is reflected in the reminder list."
+  },
+  {
+    "id": "reminder-delete",
+    "question": "How do I delete a reminder?",
+    "keywords": ["remove reminder", "confirm delete", "delete reminder from list"],
+    "answer": "Select Delete on the reminder and confirm. The reminder is removed from the list."
+  },
+  {
+    "id": "ai-generate-documents",
+    "question": "How do I generate documents from a legal PDF?",
+    "keywords": ["AI Assist", "case", "FIR", "charge sheet", "select document types", "generate", "case summary", "bail application", "60 seconds"],
+    "answer": "Open a case’s AI Assist tab, upload a legal PDF such as an FIR or charge sheet, choose document types, and select Generate. Generated documents, such as a case summary or bail application, should appear in tabs within 60 seconds."
+  },
+  {
+    "id": "ai-extracted-facts",
+    "question": "Where can I see facts extracted from an uploaded PDF?",
+    "keywords": ["extracted facts", "expand panel", "party names", "dates", "FIR number", "court name", "PDF facts"],
+    "answer": "After document generation, expand the Extracted Facts panel. It shows extracted party names, dates, FIR number, and court name when available in the PDF."
+  },
+  {
+    "id": "ai-edit-document",
+    "question": "How do I edit a generated document?",
+    "keywords": ["inline edit", "TipTap", "change sentence", "save edits", "generated document"],
+    "answer": "Open a generated document, edit its text inline, and select Save Edits. The changes should remain after the page reloads."
+  },
+  {
+    "id": "ai-download-docx",
+    "question": "How do I download a generated document as a Word file?",
+    "keywords": ["DOCX", ".docx", "Word", "Microsoft Word", "Google Docs", "download document"],
+    "answer": "Open the generated document’s tab and select Download .docx. The Word file should download and open in Microsoft Word or Google Docs."
+  },
+  {
+    "id": "ai-file-size",
+    "question": "What is the AI PDF upload size limit?",
+    "keywords": ["AI Assist", "2 MB", "2MB", "per-file limit", "oversized PDF", "file too large"],
+    "answer": "AI Assist enforces a 2 MB per-file limit. A larger upload should be rejected with an “Exceeds 2MB per-file limit” error."
+  },
+  {
+    "id": "ai-file-count",
+    "question": "How many files can I upload for AI generation at once?",
+    "keywords": ["maximum five files", "max 5", "six files", "file count limit", "batch upload"],
+    "answer": "AI Assist accepts up to 5 files at once. If you select 6, the extra file should be rejected or an error shown."
+  },
+  {
+    "id": "ai-usage-counter",
+    "question": "When does my daily AI usage counter increase?",
+    "keywords": ["usage count", "generations per day", "quota", "counter increments", "successful generation"],
+    "answer": "The daily usage counter increases by 1 after a document generation succeeds. Check the counter before and after generation to see the update."
+  },
+  {
+    "id": "ai-cache",
+    "question": "Does uploading the same PDF again reuse the previous result?",
+    "keywords": ["cached result", "same PDF", "same case", "duplicate upload", "no wait", "usage counter does not increment"],
+    "answer": "Uploading the exact same PDF again on the same case should return its cached result immediately. Reusing the result does not increment the usage counter."
+  },
+  {
+    "id": "profile-edit",
+    "question": "How do I edit my profile bio or phone number?",
+    "keywords": ["profile icon", "profile page", "edit bio", "change phone", "save profile"],
+    "answer": "Open Profile from the profile icon, edit your bio or phone number, and save. The changes appear on your profile page."
+  },
+  {
+    "id": "profile-bar-council",
+    "question": "Where do I add my Bar Council details?",
+    "keywords": ["lawyer profile", "Bar Council ID", "state", "enrollment year", "save lawyer details"],
+    "answer": "Open Profile → Lawyer Profile, enter your Bar Council ID, state, and enrollment year, then save. The details are stored in your profile."
+  },
+  {
+    "id": "profile-change-password",
+    "question": "How do I change my account password?",
+    "keywords": ["profile", "current password", "new password", "save", "old password rejected", "sign out", "change credentials"],
+    "answer": "Open Profile → Change Password, enter your current and new passwords, and save. Log out and back in to check that the new password works."
+  },
+  {
+    "id": "profile-subscription",
+    "question": "Where can I see my subscription plan and expiry date?",
+    "keywords": ["profile", "subscription", "current plan", "expiry", "expiration date", "features", "plan details"],
+    "answer": "Open Profile → Subscription. It shows your current plan, expiry date, and plan features."
+  }
+]

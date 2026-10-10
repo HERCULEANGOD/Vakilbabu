@@ -12,4 +12,3 @@ dist/
 build/
 *.egg-info/
 .vscode/
-/backend/knowledge/faqs.json
